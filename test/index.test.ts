@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import number2Text from "./index";
+import number2Text from "../src/index";
 
 const numbers = {
   1: "one",

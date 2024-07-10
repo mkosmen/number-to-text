@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsx index",
-    "watch": "npx tsx --watch ./index.ts",
-    "test": "jest"
+    "dev": "npx tsx ./src/index",
+    "watch": "npx tsx --watch ./src./index.ts",
+    "test": "jest ./test"
   },
   "keywords": [],
   "author": "",
