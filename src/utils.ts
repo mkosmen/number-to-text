@@ -16,21 +16,22 @@ export const getPieces = (n: string[]) => {
 
   n.forEach((t, i) => {
     let r = "";
-    const g = +t;
 
     switch (t.length) {
       case 1:
-        r += numbers[g];
+        r += numbers[t as keyof typeof numbers];
         break;
 
       case 2:
       case 3:
-        r += numbers.hasOwnProperty(g) ? numbers[g] : writeNumber(t);
+        r += numbers.hasOwnProperty(t as keyof typeof numbers)
+          ? numbers[t as keyof typeof numbers]
+          : writeNumber(t);
         break;
     }
 
     if (i in pieces) {
-      r += ` ${pieces[i]}`;
+      r += ` ${pieces[i as unknown as keyof typeof pieces]}`;
     }
 
     p.push(r);
@@ -42,20 +43,22 @@ export const getPieces = (n: string[]) => {
 const writeNumber = (t: string) => {
   switch (t.length) {
     case 1:
-      return numbers[+t[0]];
+      return numbers[t[0] as keyof typeof numbers];
 
     case 2:
-      return `${numbers[+`${t[0]}0`]} ${t[1] === "0" ? "" : numbers[+t[1]]}`;
+      return `${numbers[`${t[0]}0` as keyof typeof numbers]} ${
+        t[1] === "0" ? "" : numbers[t[1] as keyof typeof numbers]
+      }`;
 
     case 3:
-      let result = `${numbers[+t[0]]} hundred`;
+      let result = `${numbers[t[0] as keyof typeof numbers]} hundred`;
 
       if (t[1] !== "0") {
-        result += ` ${numbers[+`${t[1]}0`]}`;
+        result += ` ${numbers[`${t[1]}0` as keyof typeof numbers]}`;
       }
 
       if (t[2] !== "0") {
-        result += ` ${numbers[+t[2]]}`;
+        result += ` ${numbers[t[2] as keyof typeof numbers]}`;
       }
 
       return result;
