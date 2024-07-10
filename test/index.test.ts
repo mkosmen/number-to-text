@@ -7,6 +7,7 @@ const numbers = {
   50: "fifty",
   100: "one hundred",
   101: "one hundred one",
+  123: "one hundred twenty three",
   259: "two hundred fifty nine",
   6147: "six thousand one hundred forty seven",
   83501: "eighty three thousand five hundred one",
