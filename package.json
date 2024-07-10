@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npx tsx ./src/index",
     "watch": "npx tsx --watch ./src./index.ts",
+    "compile": "npx tsc -p tsconfig.json",
     "test": "jest ./test"
   },
   "keywords": [],
@@ -20,6 +21,7 @@
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.2",
-    "tsx": "^4.16.2"
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
   }
 }
